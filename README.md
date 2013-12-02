@@ -56,6 +56,7 @@ PROOFREAD_ENDPOINTS = (
     ('/post/', 405, 'GET'),  # This should return a 405 on a GET request
     ('/secured', 403),  # Should return a 403
     ('/post/', 200, 'POST', {'foo': 'bar'}),  # Should handle some POST data
+    ('/post/', 200, 'POST', {'foo': 'bar'}, {'HTTP_CUSTOM_HEADER': 'bar'}),  # Should handle some POST data and extra headers
 )
 ```
 
