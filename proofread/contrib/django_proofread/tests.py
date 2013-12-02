@@ -13,8 +13,8 @@ from proofread.base import BaseTestCase
 
 ENDPOINTS = []
 for endpoint in getattr(settings, 'PROOFREAD_ENDPOINTS', []):
-    if len(endpoint) < 4:
-        endpoint = endpoint + ('', 200, 'GET', None)[len(endpoint):]
+    if len(endpoint) < 5:
+        endpoint = endpoint + ('', 200, 'GET', None, {})[len(endpoint):]
     ENDPOINTS.append(endpoint)
 
 for key, status in (('SUCCESS', 200), ('FAILURES', 404)):
